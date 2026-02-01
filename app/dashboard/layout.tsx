@@ -3,7 +3,7 @@ import MobileMenu from './components/menu/mobile-menu';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid md:grid-cols-[250px_1fr] h-screen">
+    <div className="md:grid md:grid-cols-[250px_1fr] h-screen">
       <MainMenu className="hidden md:flex" />
       <MobileMenu />
 

@@ -6,7 +6,12 @@ import LightDarkToggle from '../../../../components/ui/light-dark-toggle';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-function MainMenu({ className }: { className?: string }) {
+type Props = {
+  className?: string;
+  onItemClick?: () => void;
+};
+
+function MainMenu({ className, onItemClick }: Props) {
   return (
     <nav className={cn('md:bg-muted p-4 overflow-auto flex flex-col', className)}>
       <header className="hidden md:block border-b dark:border-b-black border-b-zinc-300 pb-4">
@@ -14,7 +19,7 @@ function MainMenu({ className }: { className?: string }) {
       </header>
       <ul className="py-4 grow">
         {MENU_LINKS.map(({ label, href }) => (
-          <li key={href}>
+          <li key={href} onClick={onItemClick}>
             <MenuItem href={href}>{label}</MenuItem>
           </li>
         ))}
