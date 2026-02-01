@@ -4,11 +4,12 @@ import MenuItem from './menu-item';
 import { Avatar, AvatarFallback } from '../../../../components/ui/avatar';
 import LightDarkToggle from '../../../../components/ui/light-dark-toggle';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
-function MainMenu() {
+function MainMenu({ className }: { className?: string }) {
   return (
-    <nav className="bg-muted p-4 overflow-auto flex flex-col">
-      <header className="border-b dark:border-b-black border-b-zinc-300 pb-4">
+    <nav className={cn('md:bg-muted p-4 overflow-auto flex flex-col', className)}>
+      <header className="hidden md:block border-b dark:border-b-black border-b-zinc-300 pb-4">
         <MenuTitle />
       </header>
       <ul className="py-4 grow">
